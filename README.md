@@ -95,16 +95,16 @@ npx prettier --write .
 # Estructura del proyecto
 
 derma-naira-web/
-│── src/                    # Módulos y componentes principales
-│   ├── app/                # Módulos y componentes principales
-│   ├── assets/             # Imágenes, íconos y archivos estáticos
-│   ├── environments/       # Configuración de entornos
-│   ├── styles.scss         # Estilos globales
-│── .prettierrc             # Configuración de Prettier
-│── .eslintrc.json          # Configuración de ESLint
-│── angular.json            # Configuración de Angular
-│── package.json            # Dependencias del proyecto
-│── README.md               # Documentación del proyecto
+│── src/                    # Módulos y componentes principales<br>
+│   ├── app/                # Módulos y componentes principales<br>
+│   ├── assets/             # Imágenes, íconos y archivos estáticos<br>
+│   ├── environments/       # Configuración de entornos<br>
+│   ├── styles.scss         # Estilos globales<br>
+│── .prettierrc             # Configuración de Prettier<br>
+│── .eslintrc.json          # Configuración de ESLint<br>
+│── angular.json            # Configuración de Angular<br>
+│── package.json            # Dependencias del proyecto<br>
+│── README.md               # Documentación del proyecto<br>
 
 # Iniciar el servidor de desarrollo
 ```bash

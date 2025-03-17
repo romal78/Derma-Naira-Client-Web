@@ -48,6 +48,7 @@ npm install --save-dev eslint @angular-eslint/eslint-plugin
 npm install --save-dev eslint-config-prettier eslint-plugin-prettier
 
 🔹 eslint-config-prettier → Desactiva las reglas de ESLint que chocan con Prettier.
+
 🔹 eslint-plugin-prettier → Permite ejecutar Prettier como una regla dentro de ESLint.
 
 Actualizar .eslintrc.json para integrarlos:
@@ -68,10 +69,20 @@ npx eslint .
 Ejecutar Prettier
 npx prettier --write .
 
+## 🔍 Diferencias clave entre Prettier y ESLint
+
+| Característica  | 🖌 Prettier (Formateador) | 🔍 ESLint (Linter) |
+|---------------|------------------------|-------------------|
+| **Propósito**  | Formatear el código automáticamente | Analizar y detectar errores |
+| **Configuración** | Reglas de formato (espacios, comas, indentación) | Reglas de buenas prácticas (errores de código, variables no usadas) |
+| **Corrección** | Aplica cambios de estilo automáticamente | Sugiere cambios, pero no siempre los corrige |
+| **Integración** | Funciona junto con ESLint | Puede usar Prettier como complemento |
+
 
 # Estructura del proyecto
-derma-naira-client/
-│── src/
+
+derma-naira-web/
+│── src/                    # Módulos y componentes principales
 │   ├── app/                # Módulos y componentes principales
 │   ├── assets/             # Imágenes, íconos y archivos estáticos
 │   ├── environments/       # Configuración de entornos

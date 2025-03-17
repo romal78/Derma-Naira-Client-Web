@@ -1,59 +1,95 @@
-# DermaNairaWeb
+# Derma-Naira Client Web
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+Este es el frontend del sistema de detección de cáncer de piel, desarrollado con Angular.
 
-## Development server
+## Instalación y configuración
 
-To start a local development server, run:
+### **Requisitos previos**
+- Node.js y npm instalados
+- Angular CLI instalado (`npm install -g @angular/cli`)
 
-```bash
+### **Pasos de instalación**
+
+# 1. Clonar el repositorio
+git clone https://github.com/Derma-Naira/Derma-Naira-Client-Web.git
+cd Derma-Naira-Client-Web
+
+# 2. Inicializar un nuevo proyecto Angular
+npx @angular/cli new derma-naira-client --directory . --style=css --routing
+
+# 3. Instalar Angular Material
+ng add @angular/material
+
+# 4. Instalar dependencias para subir imágenes y procesarlas con IA
+npm install @angular/forms @angular/file-upload @tensorflow/tfjs @tensorflow-models/mobilenet
+
+# 5. Instalar Prettier
+npm install --save-dev prettier
+
+# 5.1 Configuración (.prettierrc)
+{
+  "singleQuote": true,
+  "semi": false
+}
+
+# 6. Instalar ESLint
+npm install --save-dev eslint @angular-eslint/eslint-plugin
+
+# 6.1 Configuración (.eslintrc.json)
+{
+  "extends": ["eslint:recommended", "plugin:@angular-eslint/recommended"],
+  "rules": {
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"]
+  }
+}
+
+# 7. Instalar complemento para integrar ambos complementos
+npm install --save-dev eslint-config-prettier eslint-plugin-prettier
+
+🔹 eslint-config-prettier → Desactiva las reglas de ESLint que chocan con Prettier.
+🔹 eslint-plugin-prettier → Permite ejecutar Prettier como una regla dentro de ESLint.
+
+Actualizar .eslintrc.json para integrarlos:
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@angular-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}
+
+Ejecutar ESLint
+npx eslint .
+
+Ejecutar Prettier
+npx prettier --write .
+
+
+# Estructura del proyecto
+derma-naira-client/
+│── src/
+│   ├── app/                # Módulos y componentes principales
+│   ├── assets/             # Imágenes, íconos y archivos estáticos
+│   ├── environments/       # Configuración de entornos
+│   ├── styles.scss         # Estilos globales
+│── .prettierrc             # Configuración de Prettier
+│── .eslintrc.json          # Configuración de ESLint
+│── angular.json            # Configuración de Angular
+│── package.json            # Dependencias del proyecto
+│── README.md               # Documentación del proyecto
+
+# Iniciar el servidor de desarrollo
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
+# Construir la aplicación para producción
 ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+# Ejecutar ESLint para revisión de código
+npx eslint .
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# Ejecutar Prettier para formateo de código
+npx prettier --write .
